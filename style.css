@@ -17,7 +17,7 @@ body {
     flex-wrap: wrap;
     flex-direction: column;
     height: 100vh;
-    background-image: url('/simple-blue-background-free-vector.jpg');
+    background-image: url('background\ keren\ biru.jfif');
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
@@ -56,6 +56,13 @@ button:hover {
     transform: translateY(5px);
     box-shadow: 0px 2px 3px 6px rgb(120, 126, 129);
 
+}
+@media(max-width:1450px)
+{
+    button{
+        width: 12vw;
+        height: 5vh;
+    }
 }
 
 @media (max-width:1200px) and (min-width:320px) {
@@ -102,7 +109,7 @@ button:hover {
 .container2 {
     display: flex;
     flex-wrap: wrap;
-    background-image: url('/simple-blue-background-free-vector.jpg');
+    background-image: url('background\ keren\ biru.jfif');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
