@@ -37,7 +37,8 @@ function text() {
         text();
     }
     if (a.length != 0 && b.length != 0 && c != 0 && d != 0) {
-        alert("Your information successfully submited");
+        alert(`  ${localStorage.getItem('Name')} thankyou
+    Your information successfully submited`);
     }
 
     window.location.href = "instruction.html";

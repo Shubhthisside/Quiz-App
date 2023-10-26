@@ -13,11 +13,12 @@ body {
 }
 
 .container {
+    font-family: 'Playpen Sans', cursive;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     height: 100vh;
-    background-image: url('background\ keren\ biru.jfif');
+    background-image: url('BG\ q1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
@@ -109,7 +110,7 @@ button:hover {
 .container2 {
     display: flex;
     flex-wrap: wrap;
-    background-image: url('background\ keren\ biru.jfif');
+    background-image: url('BG\ q2.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
