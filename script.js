@@ -37,7 +37,7 @@ function text() {
         text();
     }
     if (a.length != 0 && b.length != 0 && c != 0 && d != 0) {
-        alert(`  ${localStorage.getItem('Name')} thankyou
+        alert(`${localStorage.getItem('Name')} thankyou
     Your information successfully submited`);
     }
 
@@ -53,7 +53,7 @@ function exit() {
 // }
 
 function cont() {
-    window.location.href = "Quiz_question.html";
+    window.location.href = "quiz_question.html";
 }
 
 function exit() {
