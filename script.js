@@ -222,13 +222,13 @@ if (currentQuiz + 1 < quizdata.length) {
 
         // Set the initial time limit
         let timeRemaining = quizdata[index].timeLimit;
-        countdownElement.textContent = timeRemaining + ' second';
+        countdownElement.textContent = timeRemaining + ' minute';
 
         // Start the timer
         clearInterval(timerInterval); // Clear any previous timer
         timerInterval = setInterval(function () {
             timeRemaining--;
-            countdownElement.textContent = timeRemaining + ' second';
+            countdownElement.textContent = timeRemaining + ' minute';
 
             if (timeRemaining <= 0) {
                 clearInterval(timerInterval);
@@ -283,13 +283,13 @@ submit.addEventListener("click", () => {
     const selectedOptionIndex = getselectedoption();
 
     if (selectedOptionIndex.length == 0) {
-       
+        deselectedAnswer();
         loadQuiz();
 
     }
 
     if (selectedOptionIndex == quizdata[currentQuiz].correct) {
-        score = score + 5;
+        score = score + 4;
     }
     else if (selectedOptionIndex != quizdata[currentQuiz].correct) {
         score = score - 1;
