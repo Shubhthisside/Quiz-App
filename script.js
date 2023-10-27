@@ -74,7 +74,7 @@ const quizdata = [
             "Hyper Text Machine Language",
         ],
         correct: 1,
-        timeLimit: 10,
+        
     },
     {
         question: "Which of the following tag is used to embed css in html page?",
@@ -86,7 +86,6 @@ const quizdata = [
 
         ],
         correct: 3,
-        timeLimit: 10,
     },
 
     {
@@ -98,7 +97,7 @@ const quizdata = [
             "Cascade Sheet Style",
         ],
         correct: 0,
-        timeLimit: 10,
+
     },
 
     {
@@ -110,7 +109,7 @@ const quizdata = [
             "Goblin",
         ],
         correct: 3,
-        timeLimit: 10,
+    
     },
 
     {
@@ -122,7 +121,7 @@ const quizdata = [
             "Expelliarmus",
         ],
         correct: 1,
-        timeLimit: 10,
+        
     },
     {
         question: "In famous movie matrix which pill does Neo take?",
@@ -133,7 +132,7 @@ const quizdata = [
             "yellow",
         ],
         correct: 0,
-        timeLimit: 10,
+    
     },
     {
         question: "Chaos is the ladder.Which series has this dialogue?",
@@ -144,7 +143,7 @@ const quizdata = [
             "Breaking bad",
         ],
         correct: 2,
-        timeLimit: 10,
+    
     },
     {
         question: "what is the full form of L's name in famous series Death note?",
@@ -155,7 +154,7 @@ const quizdata = [
             "Leo",
         ],
         correct: 0,
-        timeLimit: 10,
+        
     },
     {
         question: "Which stone did Thanos aquired first during his conquest?",
@@ -166,7 +165,7 @@ const quizdata = [
             "Reality stone",
         ],
         correct: 1,
-        timeLimit: 10,
+        
     },
     {
         question: "What is name of Naruto's father?",
@@ -177,7 +176,7 @@ const quizdata = [
             "Jiraya",
         ],
         correct: 1,
-        timeLimit: 10,
+        
     },
 
 ];
@@ -284,7 +283,7 @@ submit.addEventListener("click", () => {
     const selectedOptionIndex = getselectedoption();
 
     if (selectedOptionIndex.length == 0) {
-        deselectedAnswer();
+       
         loadQuiz();
 
     }
