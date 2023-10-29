@@ -86,6 +86,7 @@ const quizdata = [
 
         ],
         correct: 3,
+        
     },
 
     {
@@ -97,6 +98,7 @@ const quizdata = [
             "Cascade Sheet Style",
         ],
         correct: 0,
+        
 
     },
 
@@ -109,6 +111,7 @@ const quizdata = [
             "Goblin",
         ],
         correct: 3,
+        
     
     },
 
@@ -122,6 +125,7 @@ const quizdata = [
         ],
         correct: 1,
         
+        
     },
     {
         question: "In famous movie matrix which pill does Neo take?",
@@ -132,6 +136,7 @@ const quizdata = [
             "yellow",
         ],
         correct: 0,
+        
     
     },
     {
@@ -143,6 +148,7 @@ const quizdata = [
             "Breaking bad",
         ],
         correct: 2,
+        
     
     },
     {
@@ -155,6 +161,7 @@ const quizdata = [
         ],
         correct: 0,
         
+        
     },
     {
         question: "Which stone did Thanos aquired first during his conquest?",
@@ -165,6 +172,7 @@ const quizdata = [
             "Reality stone",
         ],
         correct: 1,
+        
         
     },
     {
@@ -177,11 +185,30 @@ const quizdata = [
         ],
         correct: 1,
         
+        
     },
 
 ];
 
+// timer
+const timedisp = document.getElementById("countdown");
+let time = 5*60;
+function timedisplay() {
+    const min = Math.floor(time/60);
+    const second = (time%60);
+    timedisp.textContent = `Time Left ${min}:${second}`
+}
+ const timeInterval = setInterval(() => {
+    if(time<=0){
+        timedisp.textContent = `Time's Up`
+        
+    }
+    else{
+        time--;
+      timedisplay()
 
+    }
+},1000)
 
 
 //Intialise 
@@ -210,56 +237,7 @@ const loadQuiz = () => {
 
 loadQuiz();
 
-let currentQuestionIndex = 0; // Index of the current question
-let timerInterval;
 
-if (currentQuiz + 1 < quizdata.length) {
-    function displayQuestion(index) {
-        const questionElement = document.getElementById('question');
-        const optionElements = document.querySelectorAll('.option');
-        const countdownElement = document.getElementById('countdown');
-
-
-        // Set the initial time limit
-        let timeRemaining = quizdata[index].timeLimit;
-        countdownElement.textContent = timeRemaining + ' minute';
-
-        // Start the timer
-        clearInterval(timerInterval); // Clear any previous timer
-        timerInterval = setInterval(function () {
-            timeRemaining--;
-            countdownElement.textContent = timeRemaining + ' minute';
-
-            if (timeRemaining <= 0) {
-                clearInterval(timerInterval);
-                // Time's up! You can perform some action here.
-                // For example, move to the next question.
-                if (currentQuiz < quizdata.length - 1) {
-                    currentQuiz++;
-                    deselectedAnswer();
-                    loadQuiz();
-                }
-                else {
-                    quiz.innerHTML = `
-        <div class="result">
-        <h2>🎉 Your score: ${score}/${quizdata.length * 5} correct Answers </h2>
-        <p>Congratulations on completing the quiz! ${localStorage.getItem('Name')} 🏆 </p>
-        <button class="reload-button" onclick="location.reload()">Play again 🔁</button>
-        <button class="reload-button" onclick="exit();">Exit game</button>
-        </div>`
-                        ;
-                }
-                displayQuestion(currentQuiz);
-
-            }
-        }, 1000);
-    }
-
-    // Initialize the first question and timer
-    displayQuestion(currentQuiz);
-
-
-}
 
 
 //taking user answer
@@ -296,9 +274,7 @@ submit.addEventListener("click", () => {
     }
 
     currentQuiz++;
-    if (currentQuiz < quizdata.length) {
-        displayQuestion(currentQuestionIndex);
-    }
+    
 
 
     if (currentQuiz < quizdata.length) {
@@ -321,7 +297,6 @@ submit.addEventListener("click", () => {
 skip.addEventListener("click", () => {
     if (currentQuiz < quizdata.length) {
         deselectedAnswer();
-        displayQuestion(currentQuestionIndex);
     }
 
     currentQuiz++;
